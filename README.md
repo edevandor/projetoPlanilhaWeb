@@ -1,51 +1,62 @@
 # Planília Web
 
-Pipeline mínimo para publicar a aba `MOSTRUARIO` da planilha de preços como um
-site HTML estático no GitHub Pages.
+Gerador local de site estático a partir da aba `MOSTRUARIO` da planilha de
+precificação.
 
-## Arquitetura
+Este repositório guarda só:
+
+- o gerador (`scripts/build_site.py`)
+- a configuração do projeto (`pyproject.toml`, `.gitignore`)
+- o workflow (`.github/workflows/publish.yml`)
+- a documentação de uso (`README.md`)
+
+A planilha fonte não é versionada. Ela deve existir só na máquina que executa o
+pipeline.
+
+## Fluxo
 
 ```text
-MODELO_PRECIFICACAO_REVISADA.xlsx
-        │
-        ├─ LibreOffice headless: recalcula fórmulas
-        │
-        └─ scripts/build_site.py
-                │
-                └─ site/index.html
-                        │
-                        └─ GitHub Pages
+planilha local
+   ↓
+LibreOffice headless recalcula fórmulas
+   ↓
+scripts/build_site.py lê só a aba MOSTRUARIO
+   ↓
+gera site/index.html
 ```
 
-O pipeline não recria a matemática da planilha. Ele recalcula uma cópia
-temporária, lê os valores finais da aba `MOSTRUARIO` e gera uma única página
-autocontida com busca.
-
 ## Execução local
+
+1. Coloque a planilha na máquina, por exemplo em:
+
+```text
+data/MODELO_PRECIFICACAO_REVISADA.xlsx
+```
+
+2. Crie o ambiente e instale as dependências:
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install -e .
+```
+
+3. Gere o site:
+
+```bash
 python scripts/build_site.py \
   --input data/MODELO_PRECIFICACAO_REVISADA.xlsx \
   --output site
 ```
 
-Depois, abrir `site/index.html` no navegador.
+4. Abra `site/index.html`.
 
 ## GitHub Pages
 
-O workflow em `.github/workflows/publish.yml` instala as dependências, executa
-o pipeline e publica o site. No GitHub, habilitar Pages usando `GitHub Actions`
-como fonte de build/deploy.
+O workflow está no repositório como contrato de publicação. Ele só faz sentido
+se a planilha estiver disponível no ambiente que executar o build.
 
-## Atualização
+## Segurança
 
-Substituir o XLSX em `data/`, fazer commit e push. O workflow reconstrói a página
-automaticamente.
-
-## Atenção de segurança
-
-O site publicado pelo GitHub Pages pode ser público. Não colocar no repositório
-nem publicar preços se a política da empresa exigir acesso privado.
+O repositório não deve conter a planilha fonte. Só o HTML derivado deve ser
+publicado ou versionado.

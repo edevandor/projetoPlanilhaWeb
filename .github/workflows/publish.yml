@@ -1,11 +1,6 @@
 name: Publicar mostruário
 
 on:
-  push:
-    paths:
-      - "data/MODELO_PRECIFICACAO_REVISADA.xlsx"
-      - "scripts/build_site.py"
-      - ".github/workflows/publish.yml"
   workflow_dispatch:
 
 permissions:
