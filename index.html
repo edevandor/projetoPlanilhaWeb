@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mostruário de preços</title>
+  <style>
+    :root { color-scheme: light; font-family: Inter, system-ui, -apple-system, sans-serif; }
+    body { margin: 0; background: #f4f6f8; color: #18212b; }
+    header { padding: 28px clamp(16px, 4vw, 56px) 20px; background: #102a43; color: white; }
+    h1 { margin: 0 0 8px; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+    .meta { margin: 0; opacity: .8; font-size: .9rem; }
+    main { padding: 24px clamp(16px, 4vw, 56px) 48px; }
+    .toolbar { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+    input { width: min(560px, 100%); padding: 12px 14px; border: 1px solid #bcccdc; border-radius: 8px; font-size: 1rem; }
+    #count { color: #52606d; font-size: .9rem; }
+    .table-wrap { overflow: auto; background: white; border: 1px solid #d9e2ec; border-radius: 10px; box-shadow: 0 2px 8px #102a4312; }
+    table { border-collapse: collapse; width: 100%; min-width: 980px; }
+    th, td { padding: 11px 12px; border-bottom: 1px solid #e6edf3; text-align: left; white-space: nowrap; }
+    th { position: sticky; top: 0; background: #eaf2f8; color: #243b53; font-size: .82rem; text-transform: uppercase; letter-spacing: .03em; }
+    td.price { text-align: right; font-variant-numeric: tabular-nums; }
+    tbody tr:hover { background: #f0f7ff; }
+    tbody tr:last-child td { border-bottom: 0; }
+    .empty { padding: 28px; color: #52606d; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mostruário de preços</h1>
+    <p class="meta">Fonte: MODELO_PRECIFICACAO_REVISADA.xlsx · Gerado em 20/08/2026 15:51:00 -03</p>
+  </header>
+  <main>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Buscar por código, SKU, modelo, marca..." autocomplete="off">
+      <span id="count"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>CS-LOJA</th><th>SKU</th><th>EQUIPAMENTO</th><th>TECNOLOGIA</th><th>BTUS</th><th>TUBULAÇÃO</th><th>MODELO</th><th>MARCA</th><th>A VISTA</th><th>30D/3X</th><th>30-60-90/6X</th><th>10X CARTAO</th></tr></thead>
+        <tbody id="products"><tr data-search="26482 gwc09aca-d6dnaia/o     diamond black wifi gree 2820 3030.16 3138.6 3401.14"><td>26482</td><td>GWC09ACA-D6DNAIA/O</td><td></td><td></td><td></td><td></td><td>DIAMOND BLACK WIFI</td><td class="price">GREE</td><td class="price">R$ 2.820,00</td><td class="price">R$ 3.030,16</td><td class="price">R$ 3.138,60</td><td>3401.14</td></tr>
+<tr data-search="26483 gwc09aca-d6dnaia/i     tipo barril gree    "><td>26483</td><td>GWC09ACA-D6DNAIA/I</td><td></td><td></td><td></td><td></td><td>TIPO BARRIL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26080 gwc12acc-d6dnaia/o     diamond black wifi gree 3270 3513.52 3639.17 3943.33"><td>26080</td><td>GWC12ACC-D6DNAIA/O</td><td></td><td></td><td></td><td></td><td>DIAMOND BLACK WIFI</td><td class="price">GREE</td><td class="price">R$ 3.270,00</td><td class="price">R$ 3.513,52</td><td class="price">R$ 3.639,17</td><td>3943.33</td></tr>
+<tr data-search="26081 gwc12acc-d6dnaia/i     tipo barril gree    "><td>26081</td><td>GWC12ACC-D6DNAIA/I</td><td></td><td></td><td></td><td></td><td>TIPO BARRIL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26471 gwc18acd-d6nna1d     diamond black wifi gree 4587 4931.74 5109.79 5541.29"><td>26471</td><td>GWC18ACD-D6NNA1D</td><td></td><td></td><td></td><td></td><td>DIAMOND BLACK WIFI</td><td class="price">GREE</td><td class="price">R$ 4.587,00</td><td class="price">R$ 4.931,74</td><td class="price">R$ 5.109,79</td><td>5541.29</td></tr>
+<tr data-search="26472 gwc18acd-d6nna1d     tipo barril gree    "><td>26472</td><td>GWC18ACD-D6NNA1D</td><td></td><td></td><td></td><td></td><td>TIPO BARRIL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26821 gwc12awcxb-d6dna4c/o     g-side frio - horizontal classe a gree 2645 2837.75 2936.99 3176.58"><td>26821</td><td>GWC12AWCXB-D6DNA4C/O</td><td></td><td></td><td></td><td></td><td>G-SIDE FRIO - HORIZONTAL CLASSE A</td><td class="price">GREE</td><td class="price">R$ 2.645,00</td><td class="price">R$ 2.837,75</td><td class="price">R$ 2.936,99</td><td>3176.58</td></tr>
+<tr data-search="27124 gwc12atcxb-d6dna3c/i     gas-r32 gree    "><td>27124</td><td>GWC12ATCXB-D6DNA3C/I</td><td></td><td></td><td></td><td></td><td>GAS-R32</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25812 gwc09atb-d6dna1 a/o     g-top auto connection  gree 2045 2178.04 2245.77 2407.25"><td>25812</td><td>GWC09ATB-D6DNA1 A/O</td><td></td><td></td><td></td><td></td><td>G-TOP AUTO CONNECTION </td><td class="price">GREE</td><td class="price">R$ 2.045,00</td><td class="price">R$ 2.178,04</td><td class="price">R$ 2.245,77</td><td>2407.25</td></tr>
+<tr data-search="25808 gwc09atb-d6dna1 a/i     r-32 condenasador barril gree    "><td>25808</td><td>GWC09ATB-D6DNA1 A/I</td><td></td><td></td><td></td><td></td><td>R-32 CONDENASADOR BARRIL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25595 gwc18atd-d6dna1 a/o     g-top auto connection  gree 3615 3860.25 3985.62 4285.82"><td>25595</td><td>GWC18ATD-D6DNA1 A/O</td><td></td><td></td><td></td><td></td><td>G-TOP AUTO CONNECTION </td><td class="price">GREE</td><td class="price">R$ 3.615,00</td><td class="price">R$ 3.860,25</td><td class="price">R$ 3.985,62</td><td>4285.82</td></tr>
+<tr data-search="25594 gwc18atd-d6dna1 a/i     r-32 condenasador barril gree    "><td>25594</td><td>GWC18ATD-D6DNA1 A/I</td><td></td><td></td><td></td><td></td><td>R-32 CONDENASADOR BARRIL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25597 gwc24ate-d6dna1 a/o     g-top auto connection  gree 4890 5246.74 5430.41 5873.93"><td>25597</td><td>GWC24ATE-D6DNA1 A/O</td><td></td><td></td><td></td><td></td><td>G-TOP AUTO CONNECTION </td><td class="price">GREE</td><td class="price">R$ 4.890,00</td><td class="price">R$ 5.246,74</td><td class="price">R$ 5.430,41</td><td>5873.93</td></tr>
+<tr data-search="25596 gwc24ate-d6dna1 a/i     r-32 condenasador barril gree    "><td>25596</td><td>GWC24ATE-D6DNA1 A/I</td><td></td><td></td><td></td><td></td><td>R-32 CONDENASADOR BARRIL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25872 gwc30atexf-s6dna1a/i     g-top auto connection  gree 6758 7225.54 7464.99 8039.63"><td>25872</td><td>GWC30ATEXF-S6DNA1A/I</td><td></td><td></td><td></td><td></td><td>G-TOP AUTO CONNECTION </td><td class="price">GREE</td><td class="price">R$ 6.758,00</td><td class="price">R$ 7.225,54</td><td class="price">R$ 7.464,99</td><td>8039.63</td></tr>
+<tr data-search="25871 gwc30atexf-s6dna1a/o     r-32 condenasador horizontal gree    "><td>25871</td><td>GWC30ATEXF-S6DNA1A/O</td><td></td><td></td><td></td><td></td><td>R-32 CONDENASADOR HORIZONTAL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25724 guld36w1     g-prime compacta gree 7932 8532.07 8842.22 9594.44"><td>25724</td><td>GULD36W1</td><td></td><td></td><td></td><td></td><td>G-PRIME COMPACTA</td><td class="price">GREE</td><td class="price">R$ 7.932,00</td><td class="price">R$ 8.532,07</td><td class="price">R$ 8.842,22</td><td>9594.44</td></tr>
+<tr data-search="25723 guld36zd1     r-32 condenasador horizontal gree    "><td>25723</td><td>GULD36ZD1</td><td></td><td></td><td></td><td></td><td>R-32 CONDENASADOR HORIZONTAL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25928 guld56w1     g-prime compacta gree 11053 11924.59 12377.11 13480.46"><td>25928</td><td>GULD56W1</td><td></td><td></td><td></td><td></td><td>G-PRIME COMPACTA</td><td class="price">GREE</td><td class="price">R$ 11.053,00</td><td class="price">R$ 11.924,59</td><td class="price">R$ 12.377,11</td><td>13480.46</td></tr>
+<tr data-search="25927 guld57zd1     r-32 condenasador horizontal gree    "><td>25927</td><td>GULD57ZD1</td><td></td><td></td><td></td><td></td><td>R-32 CONDENASADOR HORIZONTAL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="27098 gtc56eexk-s6dnf6a/o     g-prime compacta - classif. b gree 9800   "><td>27098</td><td>GTC56EEXK-S6DNF6A/O</td><td></td><td></td><td></td><td></td><td>G-PRIME COMPACTA - CLASSIF. B</td><td class="price">GREE</td><td class="price">R$ 9.800,00</td><td class="price">R$ 0,00</td><td class="price">R$ 0,00</td><td>0</td></tr>
+<tr data-search="27099 gtc56ccxk-s6dna1a/i     r-32 condenasador horizontal gree    "><td>27099</td><td>GTC56CCXK-S6DNA1A/I</td><td></td><td></td><td></td><td></td><td>R-32 CONDENASADOR HORIZONTAL</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26882 gwc12atb-d6dna2ak/o     condensador gree k-7 1 via - barril gree 5870   "><td>26882</td><td>GWC12ATB-D6DNA2AK/O</td><td></td><td></td><td></td><td></td><td>CONDENSADOR GREE K-7 1 VIA - BARRIL</td><td class="price">GREE</td><td class="price">R$ 5.870,00</td><td class="price">R$ 0,00</td><td class="price">R$ 0,00</td><td>0</td></tr>
+<tr data-search="26881 gkc12da-d6dnan1a/i     evap. gree k-7 1 via gree    "><td>26881</td><td>GKC12DA-D6DNAN1A/I</td><td></td><td></td><td></td><td></td><td>EVAP. GREE K-7 1 VIA</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26834 td01     painel k-7 1 via gree    "><td>26834</td><td>TD01</td><td></td><td></td><td></td><td></td><td>PAINEL K-7 1 VIA</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26890 gwc18atb-d6dna2ak/o     condensador gree k-7 1 via - barril gree 6235   "><td>26890</td><td>GWC18ATB-D6DNA2AK/O</td><td></td><td></td><td></td><td></td><td>CONDENSADOR GREE K-7 1 VIA - BARRIL</td><td class="price">GREE</td><td class="price">R$ 6.235,00</td><td class="price">R$ 0,00</td><td class="price">R$ 0,00</td><td>0</td></tr>
+<tr data-search="26891 gkc18da-d6dnan1a/i     evap. gree k-7 1 via gree    "><td>26891</td><td>GKC18DA-D6DNAN1A/I</td><td></td><td></td><td></td><td></td><td>EVAP. GREE K-7 1 VIA</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26834 td01     painel k-7 1 via gree    "><td>26834</td><td>TD01</td><td></td><td></td><td></td><td></td><td>PAINEL K-7 1 VIA</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26892 gwc24atb-d6dna2ak/o     condensador gree k-7 1 via - barril gree 7450   "><td>26892</td><td>GWC24ATB-D6DNA2AK/O</td><td></td><td></td><td></td><td></td><td>CONDENSADOR GREE K-7 1 VIA - BARRIL</td><td class="price">GREE</td><td class="price">R$ 7.450,00</td><td class="price">R$ 0,00</td><td class="price">R$ 0,00</td><td>0</td></tr>
+<tr data-search="26893 gkc24da-d6dnan1a/i     evap. gree k-7 1 via gree    "><td>26893</td><td>GKC24DA-D6DNAN1A/I</td><td></td><td></td><td></td><td></td><td>EVAP. GREE K-7 1 VIA</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="26834 td01     painel k-7 1 via gree    "><td>26834</td><td>TD01</td><td></td><td></td><td></td><td></td><td>PAINEL K-7 1 VIA</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25721 guld24w1     g-prime plus  - horizontal gree 7123 7732.4 8051.79 8839.26"><td>25721</td><td>GULD24W1</td><td></td><td></td><td></td><td></td><td>G-PRIME PLUS  - HORIZONTAL</td><td class="price">GREE</td><td class="price">R$ 7.123,00</td><td class="price">R$ 7.732,40</td><td class="price">R$ 8.051,79</td><td>8839.26</td></tr>
+<tr data-search="25720 guld24t1     r-32 gree    "><td>25720</td><td>GULD24T1</td><td></td><td></td><td></td><td></td><td>R-32</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25722 tf06/24 (tl10000220)      gree    "><td>25722</td><td>TF06/24 (TL10000220)</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25937 guld24w1     g-prime compacta - horizontal gree 7123 7732.4 8051.79 8839.26"><td>25937</td><td>GULD24W1</td><td></td><td></td><td></td><td></td><td>G-PRIME COMPACTA - HORIZONTAL</td><td class="price">GREE</td><td class="price">R$ 7.123,00</td><td class="price">R$ 7.732,40</td><td class="price">R$ 8.051,79</td><td>8839.26</td></tr>
+<tr data-search="25936 guld24t1     r-32 gree    "><td>25936</td><td>GULD24T1</td><td></td><td></td><td></td><td></td><td>R-32</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25938 tf06 /24 (tl10000220)      gree    "><td>25938</td><td>TF06 /24 (TL10000220)</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25930 guld36w1     g-prime compacta - horizontal gree 9730 10458.87 10835.18 11746.79"><td>25930</td><td>GULD36W1</td><td></td><td></td><td></td><td></td><td>G-PRIME COMPACTA - HORIZONTAL</td><td class="price">GREE</td><td class="price">R$ 9.730,00</td><td class="price">R$ 10.458,87</td><td class="price">R$ 10.835,18</td><td>11746.79</td></tr>
+<tr data-search="25929 guld36t1     r-32 gree    "><td>25929</td><td>GULD36T1</td><td></td><td></td><td></td><td></td><td>R-32</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25931 tf06 /36 (tl10000220)      gree    "><td>25931</td><td>TF06 /36 (TL10000220)</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25924 guld56w1     g-prime compacta - horizontal gree 11630 38024.68 -727905.45 -16377.44"><td>25924</td><td>GULD56W1</td><td></td><td></td><td></td><td></td><td>G-PRIME COMPACTA - HORIZONTAL</td><td class="price">GREE</td><td class="price">R$ 11.630,00</td><td class="price">R$ 38.024,68</td><td class="price">R$ -727.905,45</td><td>-16377.44</td></tr>
+<tr data-search="25923 guld56t1     r-32 gree    "><td>25923</td><td>GULD56T1</td><td></td><td></td><td></td><td></td><td>R-32</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="25925 tf06 /56 (tl10000220)      gree    "><td>25925</td><td>TF06 /56 (TL10000220)</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="23392 gul36h/a     selo procel a - barril 220v-1 f-60hz gree 6500   "><td>23392</td><td>GUL36H/A</td><td></td><td></td><td></td><td></td><td>SELO PROCEL A - BARRIL 220V-1 F-60HZ</td><td class="price">GREE</td><td class="price">R$ 6.500,00</td><td class="price">R$ 0,00</td><td class="price">R$ 0,00</td><td>0</td></tr>
+<tr data-search="23391 gu36zda      gree    "><td>23391</td><td>GU36ZDA</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">GREE</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search="           "><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td>0</td><td class="price">R$ 0,00</td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr>
+<tr data-search=".           "><td>.</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="price"></td><td class="price"></td><td class="price"></td><td class="price"></td><td></td></tr></tbody>
+      </table>
+      <div id="empty" class="empty" hidden>Nenhum produto encontrado.</div>
+    </div>
+  </main>
+  <script>
+    const search = document.querySelector('#search');
+    const rows = [...document.querySelectorAll('#products tr')];
+    const count = document.querySelector('#count');
+    const empty = document.querySelector('#empty');
+    function update() {
+      const query = search.value.trim().toLowerCase();
+      let visible = 0;
+      for (const row of rows) {
+        const show = !query || row.dataset.search.includes(query);
+        row.hidden = !show;
+        if (show) visible++;
+      }
+      count.textContent = `${visible} de ${rows.length} produtos`;
+      empty.hidden = visible !== 0;
+    }
+    search.addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>
