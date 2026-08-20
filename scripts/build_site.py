@@ -101,6 +101,14 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
     generated_at = datetime.now(timezone.utc).astimezone().strftime("%d/%m/%Y %H:%M:%S %Z")
     table_rows = []
     card_rows = []
+    brands: set[str] = set()
+    btus: set[str] = set()
+
+    def clean_text(value: Any) -> str:
+        return str(value or "").strip()
+
+    def btu_key(value: Any) -> str:
+        return "".join(ch for ch in clean_text(value) if ch.isdigit())
 
     def detail_block(header: str, value: Any, position: int) -> str:
         return (
@@ -112,17 +120,37 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
         )
 
     for row in rows:
-        search_text = " ".join(str(value or "") for value in row).lower()
+        brand_value = clean_text(row[7])
+        btu_value = btu_key(row[4])
+        if brand_value:
+            brands.add(brand_value)
+        if btu_value:
+            btus.add(btu_value)
+
+        search_text = " ".join(
+            [
+                clean_text(value) for value in row
+            ] + [brand_value, btu_value]
+        ).lower()
+
+        item_attrs = (
+            f'data-search="{html.escape(search_text, quote=True)}" '
+            f'data-brand="{html.escape(brand_value.lower(), quote=True)}" '
+            f'data-btu="{html.escape(btu_value, quote=True)}"'
+        )
 
         cells = []
         for position, value in enumerate(row, start=1):
             css_class = " class=\"price\"" if position in PRICE_COLUMNS else ""
             cells.append(f"<td{css_class}>{html.escape(format_value(value, position))}</td>")
         table_rows.append(
-            f'<tr class="product-item" data-search="{html.escape(search_text, quote=True)}">{"".join(cells)}</tr>'
+            f'<tr class="product-item" {item_attrs}>{"".join(cells)}</tr>'
         )
 
         sku = format_value(row[1], 2)
+        btu = format_value(row[4], 5)
+        equipment = format_value(row[2], 3)
+        tech = format_value(row[3], 4)
         model = format_value(row[6], 7)
         brand = format_value(row[7], 8)
         avista = format_value(row[8], 9)
@@ -131,7 +159,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
         x10 = format_value(row[11], 12)
 
         summary_cols = []
-        for label, value in ((headers[0], row[0]), (headers[1], row[1]), (headers[6], row[6]), (headers[7], row[7])):
+        for label, value in ((headers[0], row[0]), (headers[1], row[1]), (headers[4], row[4]), (headers[7], row[7])):
             summary_cols.append(
                 '<div class="summary-chip">'
                 f'<span>{html.escape(label)}</span>'
@@ -145,7 +173,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
 
         card_rows.append(
             f'''
-<article class="card product-item" data-search="{html.escape(search_text, quote=True)}">
+<article class="card product-item" {item_attrs}>
   <div class="card-head">
     <div>
       <div class="card-label">CS-LOJA</div>
@@ -156,7 +184,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
       <div class="card-title">{html.escape(brand)}</div>
     </div>
   </div>
-  <div class="card-subtitle">{html.escape(sku)} · {html.escape(model)}</div>
+  <div class="card-subtitle">BTU {html.escape(btu)} · {html.escape(sku)} · {html.escape(model)}</div>
   <div class="summary-grid">{''.join(summary_cols)}</div>
   <div class="price-grid">
     <div class="price-item"><span>À vista</span><strong>{html.escape(avista)}</strong></div>
@@ -177,6 +205,15 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
     cards_body = "\n".join(card_rows)
     escaped_source = html.escape(source_name)
 
+    brand_options = "".join(
+        f'<option value="{html.escape(brand, quote=True)}">{html.escape(brand)}</option>'
+        for brand in sorted(brands)
+    )
+    btu_options = "".join(
+        f'<option value="{html.escape(btu, quote=True)}">{html.escape(btu)}</option>'
+        for btu in sorted(btus, key=int)
+    )
+
     return f"""<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -194,6 +231,12 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
     .toolbar {{ display: flex; gap: 12px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }}
     input {{ width: min(620px, 100%); padding: 12px 14px; border: 1px solid #bcccdc; border-radius: 10px; font-size: 1rem; }}
     #count {{ color: #52606d; font-size: .92rem; }}
+    .filters {{ display: flex; gap: 10px; flex-wrap: wrap; width: 100%; }}
+    .filter {{ display: flex; flex-direction: column; gap: 6px; min-width: 180px; }}
+    .filter span {{ font-size: .72rem; text-transform: uppercase; letter-spacing: .04em; color: #627d98; }}
+    .filter select {{ padding: 11px 12px; border: 1px solid #bcccdc; border-radius: 10px; font-size: .98rem; background: white; color: #18212b; }}
+    .clear-filters {{ align-self: end; padding: 11px 14px; border: 1px solid #bcccdc; border-radius: 10px; background: #eaf2f8; color: #243b53; font-weight: 600; cursor: pointer; }}
+    .clear-filters:hover {{ background: #d9e2ec; }}
     .table-wrap {{ overflow: auto; background: white; border: 1px solid #d9e2ec; border-radius: 10px; box-shadow: 0 2px 8px #102a4312; }}
     table {{ border-collapse: collapse; width: 100%; min-width: 980px; }}
     th, td {{ padding: 11px 12px; border-bottom: 1px solid #e6edf3; text-align: left; white-space: nowrap; }}
@@ -242,6 +285,23 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
   <main>
     <div class="toolbar">
       <input id="search" type="search" placeholder="Buscar por código, SKU, modelo, marca..." autocomplete="off">
+      <div class="filters">
+        <label class="filter">
+          <span>BTU</span>
+          <select id="btu-filter">
+            <option value="">Todos</option>
+            {btu_options}
+          </select>
+        </label>
+        <label class="filter">
+          <span>Marca</span>
+          <select id="brand-filter">
+            <option value="">Todas</option>
+            {brand_options}
+          </select>
+        </label>
+        <button id="clear-filters" class="clear-filters" type="button">Limpar</button>
+      </div>
       <span id="count"></span>
     </div>
     <div class="table-wrap">
@@ -255,6 +315,9 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
   </main>
   <script>
     const search = document.querySelector('#search');
+    const btuFilter = document.querySelector('#btu-filter');
+    const brandFilter = document.querySelector('#brand-filter');
+    const clearFilters = document.querySelector('#clear-filters');
     const tableRows = [...document.querySelectorAll('#products-table .product-item')];
     const cards = [...document.querySelectorAll('#cards .product-item')];
     const count = document.querySelector('#count');
@@ -265,27 +328,46 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
       return mobileQuery.matches ? cards : tableRows;
     }}
 
+    function matchesFilters(item, query, btu, brand) {{
+      return (!query || item.dataset.search.includes(query))
+        && (!btu || item.dataset.btu === btu)
+        && (!brand || item.dataset.brand === brand);
+    }}
+
     function update() {{
       const query = search.value.trim().toLowerCase();
+      const btu = btuFilter.value;
+      const brand = brandFilter.value;
       const items = currentItems();
       let visible = 0;
 
       for (const item of tableRows) {{
-        const show = !query || item.dataset.search.includes(query);
-        item.hidden = mobileQuery.matches || !show;
-        if (show && !mobileQuery.matches) visible++;
+        const show = !mobileQuery.matches && matchesFilters(item, query, btu, brand);
+        item.hidden = !show;
+        if (show) visible++;
       }}
       for (const item of cards) {{
-        const show = !query || item.dataset.search.includes(query);
-        item.hidden = !mobileQuery.matches || !show;
-        if (show && mobileQuery.matches) visible++;
+        const show = mobileQuery.matches && matchesFilters(item, query, btu, brand);
+        item.hidden = !show;
+        if (show) visible++;
       }}
 
       count.textContent = `${{visible}} de ${{items.length}} produtos`;
       empty.hidden = visible !== 0;
     }}
 
+    function clearAll() {{
+      search.value = '';
+      btuFilter.value = '';
+      brandFilter.value = '';
+      update();
+      search.focus();
+    }}
+
     search.addEventListener('input', update);
+    btuFilter.addEventListener('change', update);
+    brandFilter.addEventListener('change', update);
+    clearFilters.addEventListener('click', clearAll);
     mobileQuery.addEventListener('change', update);
     update();
   </script>
