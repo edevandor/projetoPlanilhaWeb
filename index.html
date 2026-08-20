@@ -64,7 +64,7 @@
 <body>
   <header>
     <h1>Mostruário de preços</h1>
-    <p class="meta">Gerado em 20/08/2026 16:59:48 -03</p>
+    <p class="meta">Gerado em 20/08/2026 17:06:40 -03</p>
   </header>
   <main>
     <div class="toolbar">
@@ -7119,7 +7119,7 @@
     function update() {
       const query = search.value.trim().toLowerCase();
       const btu = btuFilter.value;
-      const brand = brandFilter.value;
+      const brand = brandFilter.value.trim().toLowerCase();
       const items = currentItems();
       let visible = 0;
 
