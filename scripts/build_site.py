@@ -334,7 +334,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
     function update() {{
       const query = search.value.trim().toLowerCase();
       const btu = btuFilter.value;
-      const brand = brandFilter.value;
+      const brand = brandFilter.value.trim().toLowerCase();
       const items = currentItems();
       let visible = 0;
 
