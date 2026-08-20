@@ -159,16 +159,11 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
         x10 = format_value(row[11], 12)
 
         summary_cols = []
-        for label, value in ((headers[2], row[2]), (headers[3], row[3])):
-            summary_cols.append(
-                '<div class="summary-chip">'
-                f'<span>{html.escape(label)}</span>'
-                f'<strong>{html.escape(format_value(value, 1))}</strong>'
-                '</div>'
-            )
 
         details = []
         for position, (header, value) in enumerate(zip(headers, row), start=1):
+            if position in {1, 7, 8}:
+                continue
             details.append(detail_block(header, value, position))
 
         card_rows.append(
@@ -183,9 +178,12 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
       <div class="card-label">BTU</div>
       <div class="card-title">{html.escape(btu)}</div>
     </div>
+    <div>
+      <div class="card-label">MARCA</div>
+      <div class="card-title">{html.escape(brand)}</div>
+    </div>
   </div>
-  <div class="card-subtitle">{html.escape(sku)} · {html.escape(model)} · {html.escape(brand)}</div>
-  <div class="summary-grid">{''.join(summary_cols)}</div>
+  <div class="card-subtitle">{html.escape(sku)} · {html.escape(model)}</div>
   <div class="price-grid">
     <div class="price-item"><span>À vista</span><strong>{html.escape(avista)}</strong></div>
     <div class="price-item"><span>3x</span><strong>{html.escape(x3)}</strong></div>
