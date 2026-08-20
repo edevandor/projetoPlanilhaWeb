@@ -135,7 +135,6 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
 
         item_attrs = (
             f'data-search="{html.escape(search_text, quote=True)}" '
-            f'data-brand="{html.escape(brand_value.lower(), quote=True)}" '
             f'data-btu="{html.escape(btu_value, quote=True)}"'
         )
 
@@ -202,10 +201,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
     table_body = "\n".join(table_rows)
     cards_body = "\n".join(card_rows)
 
-    brand_options = "".join(
-        f'<option value="{html.escape(brand, quote=True)}">{html.escape(brand)}</option>'
-        for brand in sorted(brands)
-    )
+    brand_options = '<option value="GREE">GREE</option>'
     btu_options = "".join(
         f'<option value="{html.escape(btu, quote=True)}">{html.escape(btu)}</option>'
         for btu in sorted(btus, key=int)
@@ -328,7 +324,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
     function matchesFilters(item, query, btu, brand) {{
       return (!query || item.dataset.search.includes(query))
         && (!btu || item.dataset.btu === btu)
-        && (!brand || item.dataset.brand === brand);
+        && (!brand || item.textContent.toLowerCase().includes(brand));
     }}
 
     function update() {{
