@@ -159,7 +159,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
         x10 = format_value(row[11], 12)
 
         summary_cols = []
-        for label, value in ((headers[0], row[0]), (headers[1], row[1]), (headers[4], row[4]), (headers[7], row[7])):
+        for label, value in ((headers[2], row[2]), (headers[3], row[3])):
             summary_cols.append(
                 '<div class="summary-chip">'
                 f'<span>{html.escape(label)}</span>'
@@ -180,11 +180,11 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
       <div class="card-title">{html.escape(format_value(row[0], 1))}</div>
     </div>
     <div>
-      <div class="card-label">Marca</div>
-      <div class="card-title">{html.escape(brand)}</div>
+      <div class="card-label">BTU</div>
+      <div class="card-title">{html.escape(btu)}</div>
     </div>
   </div>
-  <div class="card-subtitle">BTU {html.escape(btu)} · {html.escape(sku)} · {html.escape(model)}</div>
+  <div class="card-subtitle">{html.escape(sku)} · {html.escape(model)} · {html.escape(brand)}</div>
   <div class="summary-grid">{''.join(summary_cols)}</div>
   <div class="price-grid">
     <div class="price-item"><span>À vista</span><strong>{html.escape(avista)}</strong></div>
@@ -203,7 +203,6 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
     table_header = "".join(f"<th>{html.escape(header)}</th>" for header in headers)
     table_body = "\n".join(table_rows)
     cards_body = "\n".join(card_rows)
-    escaped_source = html.escape(source_name)
 
     brand_options = "".join(
         f'<option value="{html.escape(brand, quote=True)}">{html.escape(brand)}</option>'
@@ -280,7 +279,7 @@ def render_html(headers: list[str], rows: list[list[Any]], source_name: str) -> 
 <body>
   <header>
     <h1>Mostruário de preços</h1>
-    <p class="meta">Fonte: {escaped_source} · Gerado em {html.escape(generated_at)}</p>
+    <p class="meta">Gerado em {html.escape(generated_at)}</p>
   </header>
   <main>
     <div class="toolbar">
