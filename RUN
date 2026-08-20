@@ -1,0 +1,7 @@
+bash
+cd /home/edevandor/projetos/projetoPlaniliaWeb
+
+.venv/bin/python scripts/build_site.py \
+  --input data/MODELO_PRECIFICACAO_REVISADA.xlsx \
+  --output site
+
